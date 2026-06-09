@@ -1,0 +1,21 @@
+# 敏感配置 —— 资金账号 / Twitter token / 私钥一律不入 git
+.env
+*.local
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 运行数据 / 日志
+data/*.db
+data/*.json
+logs/
+*.log
+
+# 文档大文件（PDF 手册另存）
+docs/*.pdf
+
+# 系统
+.DS_Store

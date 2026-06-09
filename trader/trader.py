@@ -209,7 +209,8 @@ def _load_env():
     here = os.path.dirname(os.path.abspath(__file__))
     env_path = os.path.join(os.path.dirname(here), ".env")
     if os.path.isfile(env_path):
-        with open(env_path, encoding="utf-8") as f:
+        # utf-8-sig 自动吃掉 Windows PowerShell 写入的 BOM
+        with open(env_path, encoding="utf-8-sig") as f:
             for line in f:
                 line = line.strip()
                 if not line or line.startswith("#") or "=" not in line:
